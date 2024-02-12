@@ -1,0 +1,90 @@
+<!DOCTYPE html >
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Registration Page</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+
+<style>
+
+</style>
+
+
+</head>
+<body>
+
+<!--navigation bar-->
+<div class="container-fluid text-center">
+<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+  <!-- Brand -->
+  <a class="navbar-brand" th:href="@{/}">UMS Application </a>
+
+  <!-- Toggler/collapsibe Button -->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <!-- Navbar links -->
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav d-flex w-100 justify-content-between">
+    <div class="d-flex flex-row">
+    	<li class="nav-item">
+        	<a class="nav-link" th:href="@{/login}">Login </a>
+      	</li>
+      	<li class="nav-item">
+        	<a class="nav-link" th:href="@{/registration}">Registration</a>
+      	</li>
+    </div>
+	<div>
+    	<li class="nav-item">
+        	<a class="nav-link" th:href="@{/logout}">Logout</a>
+      </li>
+	</div>  
+    </ul>
+  </div>
+</nav>
+
+</div>
+
+
+<div class="container">
+	<div class="row">
+		<div class="col-lg-6 col-md-6 col-sm-6 container justify-content-center card my-5 bg-light">
+		<br>
+			<h2 class="mx-4 mb-4">Welcome to the Login Page</h2>
+			<div class="card-body  p-0 mx-4 mb-4">
+				<form th:action="@{/login}" method="post" th:object="${user}" autocomplete="off" > 
+					<div class="form-group d-flex flex-column">
+						<label>Enter the Email : </label>
+						<input type="email" id="username" th:field="*{username}" class="w-75 rounded border border-primary"/>
+						<br><span id="username2"></span>
+					</div> 
+					<br>
+					
+					<div class="form-group d-flex flex-column">
+						<label>Enter the Password :</label>
+						<input type="password" id="password" th:field="*{password}" class="w-75 rounded border border-primary"/>
+						<br><span id="password2"></span>
+					</div>
+					<br>
+					
+					<div class="box-footer">
+					<button type="submit" class="btn btn-primary btn-sm w-75">
+						Login
+					</button>
+				</div>
+				</form>
+			</div>
+		
+		</div>
+	</div>
+</div>
+
+
+
+
+
+</body>
+</html>
